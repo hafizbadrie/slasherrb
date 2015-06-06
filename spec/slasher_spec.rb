@@ -27,8 +27,29 @@ describe Slasher do
     end
   end
 
-  # describe "#strip_elements" do
-  #   let(:html) {  }
-  # end
+  describe "#strip_elements" do
+    let(:html) { File.open("spec/fixtures/test.html").read }
+    let(:slasher) { Slasher.new(html) }
+
+    it "will remove element but not with the content" do
+      slasher.strip_elements
+      document = Capybara.string(slasher.document)
+      expect(document).not_to have_css "blockquote"
+      expect(document).to have_content "This is quote"
+      expect(document).not_to have_css "strong"
+      expect(document).to have_content "This is strong"
+      expect(document).not_to have_css "a"
+      expect(document).to have_content "This is a link"
+      expect(document).not_to have_css "ul"
+      expect(document).not_to have_css "li"
+      expect(document).to have_content "This is no. 1"
+      expect(document).to have_content "This is no. 2"
+      expect(document).not_to have_css "em"
+      expect(document).to have_content "This is italic sentence"
+      expect(document).not_to have_css "ol"
+      expect(document).to have_content "This is first point"
+      expect(document).to have_content "This is second point"
+    end
+  end
 
 end
