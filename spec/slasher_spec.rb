@@ -52,4 +52,33 @@ describe Slasher do
     end
   end
 
+  describe "#push_content" do
+    let(:html) { File.open("spec/fixtures/test.html").read }
+    let(:content_1) { "This is just a content that needs to be stored in a collection" }
+    let(:content_2) { "This is just a content" }
+    let(:slasher) { Slasher.new(html) }
+
+    it "will store content in an array of hash" do
+      slasher.push_content(content_1)
+      slasher.push_content(content_2)
+      expect(slasher.contents).to have(2).items
+      expect(slasher.contents.first[:length]).to eq content_1.gsub(/\s/, '').size
+      expect(slasher.contents.first[:content]).to eq content_1
+    end
+  end
+
+  describe "#get_paragraphs_content" do
+    let(:html) { File.open("spec/fixtures/test_paragraph.html").read }
+    let(:slasher) { Slasher.new(html) }
+
+    it "will get all the content inside tag p from specific parent" do
+      html_doc = Nokogiri::HTML(slasher.document)
+      content = slasher.get_paragraphs_content(html_doc.xpath("//div[@class='content']"))
+      expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
+
+      content = slasher.get_paragraphs_content(html_doc.xpath("//div[@class='sidebar']"))
+      expect(content).to eq "This is paragraph"
+    end
+  end
+
 end
