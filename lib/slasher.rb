@@ -26,4 +26,10 @@ class Slasher
     end
   end
 
+  def slash
+    dom.remove_elements
+    dom.strip_elements
+    recursive_slash(dom.document)
+    content.get_longest_length[:content]
+  end
 end

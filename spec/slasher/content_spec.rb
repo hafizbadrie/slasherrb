@@ -21,7 +21,7 @@ describe Slasher::Content do
     end
   end
 
-  describe "#get_highest_content_length" do
+  describe "#get_longest_length" do
     let(:content) { Slasher::Content.new }
     let(:content_1) { "This is the first content" }
     let(:content_2) { "This should have the highest length among all"}
@@ -32,7 +32,7 @@ describe Slasher::Content do
       content.push_content(content_2)
       content.push_content(content_3)
 
-      expect(content.get_highest_length[:content]).to eq content_2
+      expect(content.get_longest_length[:content]).to eq content_2
     end
   end
 end

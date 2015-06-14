@@ -20,4 +20,14 @@ describe Slasher do
       expect(content.collection.size).to eq 21
     end
   end
+
+  describe "#slash" do
+    let(:html) { File.open("spec/fixtures/test_doc.html") }
+    let(:slasher) { Slasher.new(html) }
+
+    it "will return the longest/highest content" do
+      content = slasher.slash
+      expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
+    end
+  end
 end

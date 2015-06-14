@@ -14,7 +14,7 @@ class Slasher
       @collection << stored_content
     end
 
-    def get_highest_length
+    def get_longest_length
       collection.sort_by do |content|
         content[:length]
       end.last
