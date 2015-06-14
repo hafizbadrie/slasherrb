@@ -8,4 +8,5 @@ Ruby version of slasherjs. A library to extract content of an article
   * If content has `<p>`, then call `get_paragraphs_content`
   * If content doesn't have any children but text, push the text to contents with `push_contents`
   * If content still have children, then recursive to the child, or else, go to the next sibling tag
-2. Publish as a gem
+2. Refactor code
+3. Publish as a gem

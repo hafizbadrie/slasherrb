@@ -81,4 +81,31 @@ describe Slasher do
     end
   end
 
+  describe "#get_highest_content_length" do
+    let(:html) { File.open("spec/fixtures/test_doc.html") }
+    let(:slasher) { Slasher.new(html) }
+    let(:content_1) { "This is the first content" }
+    let(:content_2) { "This should have the highest length among all"}
+    let(:content_3) { "Sortest" }
+
+    it "will return highest length from contents" do
+      html_doc = Nokogiri::HTML(slasher.document)
+      slasher.push_content(content_1)
+      slasher.push_content(content_2)
+      slasher.push_content(content_3)
+
+      expect(slasher.get_highest_content_length[:content]).to eq content_2
+    end
+  end
+
+  describe "#recursive_slash" do
+    let(:html) { File.open("spec/fixtures/test_doc.html") }
+    let(:slasher) { Slasher.new(html) }
+
+    it "will recursively turn document into array of hash" do
+      html_doc = Nokogiri::HTML(slasher.document)
+      slasher.recursive_slash(html_doc)
+      expect(slasher.contents.size).to eq 21
+    end
+  end
 end

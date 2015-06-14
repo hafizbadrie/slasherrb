@@ -39,7 +39,32 @@ class Slasher
     content = ""
     node.send(:>, "p").each do |p|
       content += p.text
+      p.remove
     end
     content
   end
+
+  def get_highest_content_length
+    contents.sort_by do |content|
+      content[:length]
+    end.last
+  end
+
+  def recursive_slash(doc)
+    doc.children.each do |child|
+      if child.send(:>, "p").count > 0
+        content = get_paragraphs_content(child)
+        push_content(content)
+      end
+
+      if child.children.count > 0
+        recursive_slash(child)
+      else
+        if child.text != '' && !child.text.nil?
+          push_content(child.text)
+        end
+      end
+    end
+  end
+
 end
