@@ -12,7 +12,7 @@ To use the library, you need to have an HTML document first. In code, you will h
 require 'net/http'
 require 'slasher'
 
-uri = "http://sea-games-2015.liputan6.com/read/2252937/all-indonesia-finals-ganda-putra-sumbang-emas"
+uri = URI("http://sea-games-2015.liputan6.com/read/2252937/all-indonesia-finals-ganda-putra-sumbang-emas")
 html = Net::HTTP.get(uri)
 
 slasher = Slasher.new(html)
@@ -21,3 +21,5 @@ content = slasher.slash
 #content variable will have the main content of the HTML document (article).
 ```
 
+## TODO
+Need modification on algorithm to be able to extract from more websites
