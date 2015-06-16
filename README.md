@@ -1,13 +1,23 @@
 # slasherrb
-[![Build Status](https://semaphoreci.com/api/v1/projects/58c6aef2-91c2-428e-a803-37a8e6ffac2d/445101/badge.svg)](https://semaphoreci.com/hafizbadrie/slasherrb)      
+[![Build Status](https://semaphoreci.com/api/v1/projects/58c6aef2-91c2-428e-a803-37a8e6ffac2d/445101/badge.svg)](https://semaphoreci.com/hafizbadrie/slasherrb)
 
-Ruby version of slasherjs. A library to extract content of an article
+This project is actually the ruby version of [slasherjs](https://github.com/hafizbadrie/slasherjs). Slasher is a library that could extract the main content of an HTML article document.
+The result of extraction is depending of assumption on HTML document structure itself. Therefore, there may be flaws in the result if the document doesn't match the structure that is recognised by the library.
+This condition will make the library will be improved from time to time.
 
-## TODO
-1. Implement recursive logic (main logic)
-  * If content has `<p>`, then call `get_paragraphs_content`
-  * If content doesn't have any children but text, push the text to contents with `push_contents`
-  * If content still have children, then recursive to the child, or else, go to the next sibling tag
-2. Refactor code
-3. Implement main method
-4. Publish as a gem
+## How To Use
+
+To use the library, you need to have an HTML document first. In code, you will have like this.
+```ruby
+require 'net/http'
+require 'slasher'
+
+uri = "http://sea-games-2015.liputan6.com/read/2252937/all-indonesia-finals-ganda-putra-sumbang-emas"
+html = Net::HTTP.get(uri)
+
+slasher = Slasher.new(html)
+content = slasher.slash
+
+#content variable will have the main content of the HTML document (article).
+```
+
