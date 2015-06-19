@@ -23,9 +23,4 @@ content = slasher.slash
 
 ## Website Coverage
 
-Until now, these are the websites that already covered by the algorithm:
-1. liputan6.com
-2. kompas.com
-3. detik.com
-4. thejakartapost.com
-5. thejakartaglobe.beritasatu.com
+This library has been tested against some websites and you can see the complete list in this [document](https://github.com/hafizbadrie/slasherrb/blob/master/doc/website_coverage.txt)
