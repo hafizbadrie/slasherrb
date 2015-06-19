@@ -21,5 +21,11 @@ content = slasher.slash
 #content variable will have the main content of the HTML document (article).
 ```
 
-## TODO
-Need modification on algorithm to be able to extract from more websites
+## Website Coverage
+
+Until now, these are the websites that already covered by the algorithm:
+1. liputan6.com
+2. kompas.com
+3. detik.com
+4. thejakartapost.com
+5. thejakartaglobe.beritasatu.com
