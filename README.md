@@ -28,4 +28,5 @@ This library has been tested against some websites and you can see the complete 
 ## TODO
 1. Add more test cases: international websites
 2. Anytime I want to slash a new site, I don't need to re initialize the object.
-3. Better information for gem
+3. Add gem dependencies (nokogiri)
+4. Better information for gem
