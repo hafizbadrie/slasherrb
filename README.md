@@ -7,7 +7,7 @@ This condition will make the library will be improved from time to time.
 
 ## How To Use
 
-To use the library, you need to have an HTML document first. In code, you will have like this.
+To use the library, you need to have an HTML document first.
 ```ruby
 require 'net/http'
 require 'slasher'
@@ -24,3 +24,8 @@ content = slasher.slash
 ## Website Coverage
 
 This library has been tested against some websites and you can see the complete list in this [document](https://github.com/hafizbadrie/slasherrb/blob/master/doc/website_coverage.txt)
+
+## TODO
+1. Add more test cases: international websites
+2. Anytime I want to slash a new site, I don't need to re initialize the object.
+3. Better information for gem
