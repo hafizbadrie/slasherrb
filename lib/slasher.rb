@@ -10,6 +10,8 @@ class Slasher
   end
 
   def recursive_slash(doc)
+    content.push_content(dom.get_texts(doc))
+
     doc.children.each do |child|
       if child.send(:>, "p").count > 0
         p_content = dom.get_paragraphs_content(child)

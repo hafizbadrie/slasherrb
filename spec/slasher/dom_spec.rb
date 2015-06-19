@@ -40,15 +40,8 @@ describe Slasher::DOM do
       expect(document).to have_content "This is strong"
       expect(document).not_to have_css "a"
       expect(document).to have_content "This is a link"
-      expect(document).not_to have_css "ul"
-      expect(document).not_to have_css "li"
-      expect(document).to have_content "This is no. 1"
-      expect(document).to have_content "This is no. 2"
       expect(document).not_to have_css "em"
       expect(document).to have_content "This is italic sentence"
-      expect(document).not_to have_css "ol"
-      expect(document).to have_content "This is first point"
-      expect(document).to have_content "This is second point"
     end
   end
 
@@ -62,6 +55,16 @@ describe Slasher::DOM do
 
       content = dom.get_paragraphs_content(dom.document.xpath("//div[@class='sidebar']"))
       expect(content).to eq "This is paragraph"
+    end
+  end
+
+  describe "#get_texts" do
+    let(:html) { File.open("spec/fixtures/test_text.html").read }
+    let(:dom) { Slasher::DOM.new(html) }
+
+    it "will concat all Text children into 1 content" do
+      content = dom.get_texts(dom.document.xpath("//div[@class='content']"))
+      expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
     end
   end
 end

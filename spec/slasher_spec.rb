@@ -17,7 +17,7 @@ describe Slasher do
     it "will recursively turn document into array of hash" do
       slasher.recursive_slash(slasher.dom.document)
       content = slasher.content
-      expect(content.collection.size).to eq 21
+      expect(content.collection.size).to eq 30
     end
   end
 

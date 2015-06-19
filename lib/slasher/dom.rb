@@ -1,7 +1,7 @@
 class Slasher
   class DOM
     REMOVED_ELEMENTS  = ['iframe', 'script', 'style', 'noscript', 'header', 'footer', 'br', 'img']
-    STRIPPED_ELEMENTS = ['blockquote', 'strong', 'a', 'ul', 'li', 'em', 'ol']
+    STRIPPED_ELEMENTS = ['blockquote', 'strong', 'a', 'em', 'b']
 
     attr_accessor :document
 
@@ -28,6 +28,14 @@ class Slasher
       node.send(:>, "p").each do |p|
         content += p.text
         p.remove
+      end
+      content
+    end
+
+    def get_texts(node)
+      content = ""
+      node.children.each do |child|
+        content += child.text.delete("\n").strip if child.text?
       end
       content
     end
