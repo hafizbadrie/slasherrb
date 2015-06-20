@@ -1,5 +1,6 @@
 # slasherrb
 [![Build Status](https://semaphoreci.com/api/v1/projects/58c6aef2-91c2-428e-a803-37a8e6ffac2d/445101/badge.svg)](https://semaphoreci.com/hafizbadrie/slasherrb)
+[![Gem Version](https://badge.fury.io/rb/slasher.png)](http://badge.fury.io/rb/slasher)
 
 This project is actually the ruby version of [slasherjs](https://github.com/hafizbadrie/slasherjs). Slasher is a library that could extract the main content of an HTML article document.
 The result of extraction is depending of assumption on HTML document structure itself. Therefore, there may be flaws in the result if the document doesn't match the structure that is recognised by the library.
@@ -29,4 +30,5 @@ This library has been tested against some websites and you can see the complete 
 1. Add more test cases: international websites
 2. Anytime I want to slash a new site, I don't need to re initialize the object.
 3. Add gem dependencies (nokogiri)
-4. Better information for gem
+4. Move test to travis
+5. Better information for gem
