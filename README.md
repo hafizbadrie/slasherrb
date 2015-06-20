@@ -2,6 +2,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/58c6aef2-91c2-428e-a803-37a8e6ffac2d/445101/badge.svg)](https://semaphoreci.com/hafizbadrie/slasherrb)
 [![Gem Version](https://badge.fury.io/rb/slasher.png)](http://badge.fury.io/rb/slasher)
 [![Code Climate](https://codeclimate.com/github/hafizbadrie/slasherrb/badges/gpa.svg)](https://codeclimate.com/github/hafizbadrie/slasherrb)
+[![Coverage Status](https://coveralls.io/repos/hafizbadrie/slasherrb/badge.svg)](https://coveralls.io/r/hafizbadrie/slasherrb)
 
 This project is actually the ruby version of [slasherjs](https://github.com/hafizbadrie/slasherjs). Slasher is a library that could extract the main content of an HTML article document.
 The result of extraction is depending of assumption on HTML document structure itself. Therefore, there may be flaws in the result if the document doesn't match the structure that is recognised by the library.
