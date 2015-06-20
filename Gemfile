@@ -6,3 +6,4 @@ gem 'capybara'
 gem 'pry'
 gem 'faker'
 gem 'nokogiri'
+gem 'coveralls', require: false
