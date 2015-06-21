@@ -8,6 +8,19 @@ This project is actually the ruby version of [slasherjs](https://github.com/hafi
 The result of extraction is depending of assumption on HTML document structure itself. Therefore, there may be flaws in the result if the document doesn't match the structure that is recognised by the library.
 This condition will make the library will be improved from time to time.
 
+## How To Install
+
+Like other rubygems, just:
+```
+gem install slasher
+```
+
+or put this on your `Gemfile`
+
+```
+gem 'slasher'
+```
+
 ## How To Use
 
 To use the library, you need to have an HTML document first.
@@ -31,6 +44,5 @@ This library has been tested against some websites and you can see the complete 
 ## TODO
 1. Add more test cases: international websites
 2. Anytime I want to slash a new site, I don't need to re initialize the object.
-3. Add gem dependencies (nokogiri)
-4. Move test to travis
-5. Better information for gem
+3. Move test to travis
+4. Better API documentation
