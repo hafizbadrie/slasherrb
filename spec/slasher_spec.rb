@@ -30,4 +30,16 @@ describe Slasher do
       expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
     end
   end
+
+  describe "#reset" do
+    let(:html) { File.open("spec/fixtures/test_doc.html") }
+    let(:slasher) { Slasher.new(html) }
+    let(:new_html) { File.open("spec/fixtures/test.html") }
+
+    it "will reset the document and content attributes into a new one" do
+      document = slasher.dom.document
+      slasher.reset(new_html)
+      expect(slasher.dom.document).not_to eq document
+    end
+  end
 end

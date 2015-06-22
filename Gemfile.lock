@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    slasher (0.5.1)
+    slasher (0.5.2)
       nokogiri (~> 1.6)
 
 GEM

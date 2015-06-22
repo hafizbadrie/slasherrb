@@ -28,6 +28,11 @@ class Slasher
     end
   end
 
+  def reset(html)
+    @dom     = Slasher::DOM.new(html)
+    @content = Slasher::Content.new
+  end
+
   def slash
     dom.remove_elements
     dom.strip_elements
