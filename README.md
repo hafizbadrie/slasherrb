@@ -43,6 +43,4 @@ This library has been tested against some websites and you can see the complete 
 
 ## TODO
 1. Add more test cases: international websites
-2. Anytime I want to slash a new site, I don't need to re initialize the object.
-3. Move test to travis
-4. Better API documentation
+2. Better API documentation
