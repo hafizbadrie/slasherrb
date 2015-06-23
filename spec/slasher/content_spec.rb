@@ -8,7 +8,7 @@ describe Slasher::Content do
   end
 
   describe "#push_content" do
-    let(:content_1) { "This is just a content that needs to be stored in a collection" }
+    let(:content_1) { "This is just a content that\nneeds to be stored in a collection" }
     let(:content_2) { "This is just a content" }
     let(:content) { Slasher::Content.new }
 
@@ -16,8 +16,8 @@ describe Slasher::Content do
       content.push_content(content_1)
       content.push_content(content_2)
       expect(content.collection).to have(2).items
-      expect(content.collection.first[:length]).to eq content_1.gsub(/\s/, '').size
-      expect(content.collection.first[:content]).to eq content_1
+      expect(content.collection.first[:length]).to eq content_1.gsub(/\s/, '').delete("\n").size
+      expect(content.collection.first[:content]).to eq content_1.delete("\n")
     end
   end
 

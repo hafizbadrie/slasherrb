@@ -8,8 +8,8 @@ class Slasher
 
     def push_content(content)
       stored_content = {
-        length: content.gsub(/\s/, '').size,
-        content: content
+        length: content.gsub(/\s/, '').delete("\n").size,
+        content: content.delete("\n")
       }
       @collection << stored_content
     end
