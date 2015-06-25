@@ -27,7 +27,7 @@ describe Slasher do
 
     it "will return the longest/highest content" do
       content = slasher.slash
-      expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
+      expect(content).to eq "This is first paragraph. This is second paragraph. This is third paragraph."
     end
   end
 

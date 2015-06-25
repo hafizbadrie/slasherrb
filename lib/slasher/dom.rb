@@ -24,12 +24,12 @@ class Slasher
     end
 
     def get_paragraphs_content(node)
-      content = ""
+      content = []
       node.send(:>, "p").each do |p|
-        content += p.text
+        content << p.text
         p.remove
       end
-      content
+      content.join(" ")
     end
 
     def get_texts(node)

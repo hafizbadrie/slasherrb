@@ -51,7 +51,7 @@ describe Slasher::DOM do
 
     it "will get all the content inside tag p from specific parent" do
       content = dom.get_paragraphs_content(dom.document.xpath("//div[@class='content']"))
-      expect(content).to eq "This is first paragraph.This is second paragraph.This is third paragraph."
+      expect(content).to eq "This is first paragraph. This is second paragraph. This is third paragraph."
 
       content = dom.get_paragraphs_content(dom.document.xpath("//div[@class='sidebar']"))
       expect(content).to eq "This is paragraph"
