@@ -14,16 +14,13 @@ class Slasher
 
     doc.children.each do |child|
       if child.send(:>, "p").count > 0
-        p_content = dom.get_paragraphs_content(child)
-        content.push_content(p_content)
+        content.push_content dom.get_paragraphs_content(child)
       end
 
       if child.children.count > 0
         recursive_slash(child)
       else
-        if child.text != '' && !child.text.nil?
-          content.push_content(child.text)
-        end
+        content.push_content(child.text) if child.text != '' && !child.text.nil?
       end
     end
   end

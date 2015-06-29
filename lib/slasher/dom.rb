@@ -24,20 +24,16 @@ class Slasher
     end
 
     def get_paragraphs_content(node)
-      content = []
-      node.send(:>, "p").each do |p|
-        content << p.text
+      node.send(:>, "p").map do |p|
+        p.text
         p.remove
-      end
-      content.join(" ")
+      end.join(" ")
     end
 
     def get_texts(node)
-      content = ""
-      node.children.each do |child|
-        content += child.text.delete("\n").strip if child.text?
-      end
-      content
+      node.children.map do |child|
+        child.text.delete("\n").strip if child.text?
+      end.join
     end
   end
 end
