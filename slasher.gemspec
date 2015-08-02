@@ -1,7 +1,7 @@
 Gem::Specification.new do |gem|
   gem.name        = 'slasher'
-  gem.version     = '0.5.2'
-  gem.date        = '2015-06-21'
+  gem.version     = '0.5.3'
+  gem.date        = '2015-08-02'
   gem.summary     = 'Extract the content of an HTML article'
   gem.description = 'This gem could extract the real content of and HTML article based on weight of words in HTML dom nodes.'
   gem.authors     = ['Hafiz Badrie Lubis']
