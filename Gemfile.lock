@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    slasher (0.5.2)
+    slasher (0.5.3)
       nokogiri (~> 1.6)
 
 GEM
@@ -90,3 +90,6 @@ DEPENDENCIES
   rspec
   rspec-collection_matchers
   slasher!
+
+BUNDLED WITH
+   1.10.5

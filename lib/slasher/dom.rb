@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 class Slasher
   class DOM
     REMOVED_ELEMENTS  = ['iframe', 'script', 'style', 'noscript', 'header', 'footer', 'br', 'img']
