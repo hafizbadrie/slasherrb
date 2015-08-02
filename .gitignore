@@ -36,3 +36,4 @@ build/
 
 /spec/cases/
 /spec/cases_spec.rb
+/benchmarks/

@@ -43,4 +43,5 @@ This library has been tested against some websites and you can see the complete 
 
 ## TODO
 1. Add more test cases: international websites
-2. Better API documentation
+2. Performance analysis
+3. Better API documentation
