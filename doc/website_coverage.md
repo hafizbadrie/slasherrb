@@ -1,3 +1,5 @@
+So far, **slasher** can extract content from these websites:
+
 1. liputan6.com
 2. kompas.com
 3. detik.com
