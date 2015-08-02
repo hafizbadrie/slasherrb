@@ -39,7 +39,7 @@ content = slasher.slash
 
 ## Website Coverage
 
-This library has been tested against some websites and you can see the complete list in this [document](https://github.com/hafizbadrie/slasherrb/blob/master/doc/website_coverage.txt)
+This library has been tested against some websites and you can see the complete list in this [document](https://github.com/hafizbadrie/slasherrb/blob/master/doc/website_coverage.md)
 
 ## TODO
 1. Add more test cases: international websites
